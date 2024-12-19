@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Testing Page</title>
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: rgb(249, 250, 251);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 64rem;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Components */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 16rem;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        /* Buttons */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .button-blue {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .button-blue:hover {
+            background-color: #2563eb;
+        }
+
+        .button-green {
+            background-color: #22c55e;
+            color: white;
+        }
+
+        .button-green:hover {
+            background-color: #16a34a;
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .cookie-banner-content {
+            max-width: 32rem;
+            margin: 0 auto;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        /* Social buttons */
+        .social-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .social-button {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        .facebook { background-color: #1877F2; }
+        .twitter { background-color: #1DA1F2; }
+        .linkedin { background-color: #0A66C2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Analytics Testing Page</h1>
+            <p>A comprehensive demo page for testing various analytics events and user interactions</p>
+        </header>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
+                 alt="Analytics Dashboard">
+            
+            <div class="card-content">
+                <h2>Interactive Elements</h2>
+                <div class="button-grid">
+                    <button class="button button-blue" onclick="console.log('Button 1 clicked')">Test Button 1</button>
+                    <button class="button button-blue" onclick="console.log('Button 2 clicked')">Test Button 2</button>
+                    <button class="button button-blue" onclick="console.log('Button 3 clicked')">Test Button 3</button>
+                    <button class="button button-blue" onclick="console.log('Button 4 clicked')">Test Button 4</button>
+                </div>
+
+                <h2>Contact Options</h2>
+                <div class="button-grid">
+                    <button class="button button-green" onclick="console.log('WhatsApp clicked')">WhatsApp</button>
+                    <button class="button button-blue" onclick="console.log('Call clicked')">Call Now</button>
+                </div>
+
+                <h2>Share</h2>
+                <div class="social-buttons">
+                    <button class="social-button facebook" onclick="console.log('Share to Facebook')">Facebook</button>
+                    <button class="social-button twitter" onclick="console.log('Share to Twitter')">Twitter</button>
+                    <button class="social-button linkedin" onclick="console.log('Share to LinkedIn')">LinkedIn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner-content">
+            <h3>Cookie Preferences</h3>
+            <p>We use cookies to enhance your browsing experience and analyze our traffic.</p>
+            <div class="button-grid">
+                <button class="button button-blue" onclick="acceptAllCookies()">Accept All</button>
+                <button class="button" onclick="customizeCookies()" style="background-color: #e5e7eb;">Customize</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function acceptAllCookies() {
+            console.log('All cookies accepted');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        function customizeCookies() {
+            console.log('Customize cookies clicked');
+            // Add your cookie customization logic here
+        }
+    </script>
+</body>
+</html>
